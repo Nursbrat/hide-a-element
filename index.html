@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hide an element </title>
+</head>
+
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hides = document.querySelectorAll('.hide')
+            const div = document.querySelectorAll('div')
+            console.log(hides);
+    
+            hides.forEach(hide => {
+                hide.addEventListener('click', () => {
+                    if (hide.className === 'hide') {
+                        hide.parentElement.style.animationPlayState = 'running';
+                        hide.parentElement.addEventListener('animationend', () => {
+                            hide.parentElement.remove()
+                        })
+                    }
+                })
+            })
+    
+    
+    
+    
+        })
+    </script>
+    <style>
+        body {
+            display: grid;
+            place-content: center;
+        }
+
+        div {
+            display: grid;
+            background-color: lightblue;
+            border: black 1px;
+            border-radius: 7px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 700px;
+            height: 50px;
+            margin-top: 10px;
+            animation: hide 1s .5s forwards;
+            animation-play-state: paused;
+        }
+
+        p {
+            color: red;
+            font-weight: 200;
+            font-size: larger;
+            padding: 10px;
+        }
+
+        .hide {
+            padding: 5px;
+            border: 1px red;
+            border-radius: 5px;
+            transition: .3s;
+            margin-right: 10px;
+        }
+
+        .hide:hover {
+            background-color: orange;
+            box-shadow: 1px 1px;
+        }
+
+        @keyframes hide {
+            0% {
+                opacity: 1;
+                width: 700px;
+                height: 50px;
+                margin-bottom: 10px;
+            }
+
+            75% {
+                opacity: 0;
+                width: 700px;
+                height: 50px;
+                margin-bottom: 10px;
+            }
+
+            100% {
+                opacity: 0;
+                height: 0px;
+                padding: 0px;
+                margin-bottom: 0px;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <p class="page">1</p>
+        <button class="hide">hide</button>
+    </div>
+    <div class="container">
+        <p class="page">2</p>
+        <button class="hide">hide</button>
+    </div>
+    <div class="container">
+        <p class="page">3</p>
+        <button class="hide">hide</button>
+    </div>
+    <div class="container">
+        <p class="page">4</p>
+        <button class="hide">hide</button>
+    </div>
+    <div class="container">
+        <p class="page">5</p>
+        <button class="hide">hide</button>
+    </div>
+    <div class="container">
+        <p class="page">6</p>
+        <button class="hide">hide</button>
+    </div>
+    <div class="container">
+        <p class="page">7</p>
+        <button class="hide">hide</button>
+    </div>
+    <div class="container">
+        <p class="page">8</p>
+        <button class="hide">hide</button>
+    </div>
+    <div class="container">
+        <p class="page">9</p>
+        <button class="hide">hide</button>
+    </div>
+    <div class="container">
+        <p class="page">10</p>
+        <button class="hide">hide</button>
+    </div>
+    <div class="container">
+        <p class="page">11</p>
+        <button class="hide">hide</button>
+    </div>
+
+</body>
+
+</html>
